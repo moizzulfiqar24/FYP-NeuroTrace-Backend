@@ -1,0 +1,1 @@
+(0bef0417-cbe8-4aef-81de-3a63c7202c88_cleaned chunk27) If it's right, we take the output as a final result. Else, we provide feedback to the team model and ask it to predict and let's learn. I hope you've understood super wise and unsupervised learning.

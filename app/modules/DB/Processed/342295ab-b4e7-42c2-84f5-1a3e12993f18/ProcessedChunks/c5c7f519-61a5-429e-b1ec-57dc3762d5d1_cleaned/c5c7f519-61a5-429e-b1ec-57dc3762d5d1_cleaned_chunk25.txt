@@ -1,0 +1,1 @@
+(c5c7f519-61a5-429e-b1ec-57dc3762d5d1_cleaned chunk25) So you can emit it a feedback to the machine, saying that it's a dog's image. The machine who learns from the feedback and finally, if it comes across any other image of a dog, it will be able to classify it correctly.

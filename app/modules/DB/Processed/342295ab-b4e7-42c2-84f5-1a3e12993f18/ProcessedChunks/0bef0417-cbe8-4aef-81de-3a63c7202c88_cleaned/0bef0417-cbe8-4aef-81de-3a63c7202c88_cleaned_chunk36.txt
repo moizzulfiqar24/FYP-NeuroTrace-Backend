@@ -1,0 +1,1 @@
+(0bef0417-cbe8-4aef-81de-3a63c7202c88_cleaned chunk36) Well, that's an interesting machine learning model which is used by global taxi giant Uber and others where they have differential pricing in real time based on demand. The number of cars available, bad, server, rush are etc.

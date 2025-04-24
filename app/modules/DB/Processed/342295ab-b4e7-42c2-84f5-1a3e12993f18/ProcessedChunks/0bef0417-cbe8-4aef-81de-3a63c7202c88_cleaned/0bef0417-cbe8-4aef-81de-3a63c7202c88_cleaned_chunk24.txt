@@ -1,0 +1,1 @@
+(0bef0417-cbe8-4aef-81de-3a63c7202c88_cleaned chunk24) All we can say that it works in the principle of feedback. Here, if we provide the system with an image of a talk and ask it to identify it. The system identifies it as a cat.

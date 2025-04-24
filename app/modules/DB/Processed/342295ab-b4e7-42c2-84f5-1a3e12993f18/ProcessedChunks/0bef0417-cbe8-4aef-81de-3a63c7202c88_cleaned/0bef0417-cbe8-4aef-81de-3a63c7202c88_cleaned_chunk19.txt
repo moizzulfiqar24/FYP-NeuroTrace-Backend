@@ -1,0 +1,1 @@
+(0bef0417-cbe8-4aef-81de-3a63c7202c88_cleaned chunk19) Here, the machine knew the features of the object and also the labels as we see it through both features. On this code, let's move to unsupervised learning and see the difference.

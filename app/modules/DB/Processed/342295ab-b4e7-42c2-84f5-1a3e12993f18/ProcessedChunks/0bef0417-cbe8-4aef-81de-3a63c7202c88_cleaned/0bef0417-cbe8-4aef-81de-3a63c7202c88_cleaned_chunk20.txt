@@ -1,0 +1,1 @@
+(0bef0417-cbe8-4aef-81de-3a63c7202c88_cleaned chunk20) Suppose you have cricket data set of various players with their respective scores and wicked second. When you see this data set to the machine, the machine identifies the pattern of player performance. So it drops this data with the respective records and the x-axis.

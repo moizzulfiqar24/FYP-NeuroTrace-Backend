@@ -1,0 +1,1 @@
+(c5c7f519-61a5-429e-b1ec-57dc3762d5d1_cleaned chunk16) Your model will predict if the currency of the coin. Here, your weight becomes the feature of coins. While currency becomes for labels, when you see this data to the machine learning model, it learns. Which feature is associated with which labels?

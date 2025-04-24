@@ -1,0 +1,1 @@
+(0bef0417-cbe8-4aef-81de-3a63c7202c88_cleaned chunk23) Hence, the learning with unlabeled data is unsupervised learning. So we saw super wise learning where the data was labeled and the unsupervised learning with the data was and able. And then there is the reinforcement learning which is a reward based learning.

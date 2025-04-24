@@ -1,0 +1,1 @@
+(0bef0417-cbe8-4aef-81de-3a63c7202c88_cleaned chunk13) That's when machine learning comes in. It learns the data, there's the prediction model. And when the new data point comes in, it can easily be stretched for it. More the data, better than model, higher will be the accuracy.

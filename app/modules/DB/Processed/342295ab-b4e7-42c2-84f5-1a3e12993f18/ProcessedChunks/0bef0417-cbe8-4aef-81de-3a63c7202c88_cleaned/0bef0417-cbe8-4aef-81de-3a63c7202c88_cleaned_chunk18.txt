@@ -1,0 +1,1 @@
+(0bef0417-cbe8-4aef-81de-3a63c7202c88_cleaned chunk18) On the basis of the weight of the new coin, your model will predict the currency. Hence, sub-wise learning uses the labels data to train the model.

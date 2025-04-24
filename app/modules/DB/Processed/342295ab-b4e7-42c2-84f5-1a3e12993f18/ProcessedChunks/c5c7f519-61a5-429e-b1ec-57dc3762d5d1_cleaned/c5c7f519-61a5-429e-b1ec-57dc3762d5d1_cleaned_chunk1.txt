@@ -1,0 +1,1 @@
+(c5c7f519-61a5-429e-b1ec-57dc3762d5d1_cleaned chunk1) We know humans learn from their past experiences and machines follow instructions given by humans. But what if humans can train the machines to learn from their past data and do what humans can do at much faster?
