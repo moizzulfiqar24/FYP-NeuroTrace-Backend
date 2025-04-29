@@ -23,10 +23,9 @@ docker run -d \
   docker.elastic.co/elasticsearch/elasticsearch:8.13.4
 ```
 
-	•	Port: Exposes Elasticsearch on localhost:9200
-	•	Security: Disabled for ease of local use
-	•	Heap Size: 2 GB min and max heap
-
+Port: Exposes Elasticsearch on localhost:9200
+Security: Disabled for ease of local use
+Heap Size: 2 GB min and max heap
 
 ### Verifying the Setup
 
