@@ -35,15 +35,15 @@ es = Elasticsearch(
     }
 )
 
-# Sentence Transformer for embeddings
+# Sentence Transformer
 model = SentenceTransformer(EMBEDDING_MODEL)
 
 # ======================== FUNCTIONS ========================
 
-def create_index_if_not_exists(user_index_name: str, metadata: list[dict]):
+def ensure_index_synced(user_index_name: str, metadata: list[dict]):
     """
-    Create a user-specific ElasticSearch index if it doesn't exist,
-    and upload the chunks from metadata.
+    Ensure that the ElasticSearch index exists and is synced with the latest FAISS metadata.
+    If the index is missing or outdated, create/update it.
     """
     try:
         if not es.indices.exists(index=user_index_name):
@@ -59,20 +59,30 @@ def create_index_if_not_exists(user_index_name: str, metadata: list[dict]):
                     }
                 }
             )
+            print(f"✅ Created index {user_index_name}.")
 
-            # Upload existing FAISS metadata into this index
-            for item in metadata:
+        # Check current document count
+        es_count = es.count(index=user_index_name)["count"]
+        faiss_count = len(metadata)
+
+        print(f"📊 Elastic doc count: {es_count} | FAISS chunk count: {faiss_count}")
+
+        if es_count < faiss_count:
+            print(f"⬆️ Syncing missing {faiss_count - es_count} chunks to Elastic...")
+            # Upload only the missing chunks
+            for i in range(es_count, faiss_count):
+                item = metadata[i]
                 doc = {
                     "text": item["text"],
                     "timestamp": item["timestamp"]
                 }
                 es.index(index=user_index_name, document=doc)
-
-            print(f"✅ Uploaded {len(metadata)} chunks into {user_index_name} index.")
+            print(f"✅ Synced Elastic index {user_index_name}.")
         else:
-            print(f"ℹ️ Elastic index {user_index_name} already exists.")
+            print("✅ Elastic index already up-to-date.")
+
     except es_exceptions.ElasticsearchException as e:
-        print(f"❌ Failed to create or upload ElasticSearch index: {e}")
+        print(f"❌ Failed ElasticSearch sync: {e}")
         raise
 
 def query_vector_store(user_id: str, query: str, top_k: int = 1) -> list[dict]:
@@ -100,8 +110,8 @@ def query_vector_store(user_id: str, query: str, top_k: int = 1) -> list[dict]:
     with open(meta_file, "rb") as f:
         metadata = pickle.load(f)
 
-    # Create ElasticSearch index if missing
-    create_index_if_not_exists(user_index_name, metadata)
+    # Ensure ElasticSearch index is in sync
+    ensure_index_synced(user_index_name, metadata)
 
     query_vec = model.encode([query])[0].reshape(1, -1)
 
