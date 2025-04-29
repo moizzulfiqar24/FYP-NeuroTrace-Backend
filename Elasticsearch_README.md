@@ -21,11 +21,12 @@ docker run -d \
   -e "xpack.security.enabled=false" \
   -e "ES_JAVA_OPTS=-Xms2g -Xmx2g" \
   docker.elastic.co/elasticsearch/elasticsearch:8.13.4
+```
 
 	•	Port: Exposes Elasticsearch on localhost:9200
 	•	Security: Disabled for ease of local use
 	•	Heap Size: 2 GB min and max heap
-```
+
 
 ### Verifying the Setup
 
