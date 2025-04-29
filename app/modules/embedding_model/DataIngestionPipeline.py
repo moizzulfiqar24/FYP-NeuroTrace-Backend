@@ -85,7 +85,7 @@ def transcribe_audio(file_path, model):
     result = model.transcribe(file_path)
     return result['text'].strip().replace('\n', ' ')
 
-def chunk_text(text, max_words=50):
+def chunk_text(text, max_words=200):
     sentences = sent_tokenize(text)
     chunks, current, count = [], "", 0
     for sentence in sentences:
