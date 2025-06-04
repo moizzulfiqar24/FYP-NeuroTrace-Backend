@@ -166,7 +166,7 @@ def query_vector_store(user_id: str, query: str, top_k: int = 1) -> list[dict]:
     context = "\n".join(context_chunks)
 
     messages = [
-        {"role": "system", "content": "You are a helpful assistant. Use ONLY the provided context to answer the question. Be concise and accurate, no more than 2–3 sentences."},
+        {"role": "system", "content": "You are a helpful assistant. Use ONLY the provided context to answer the question. Be concise and accurate, no more than 2–3 sentences. If the location includes a path like /b/bedroom 2, return only the room name (e.g., bedroom). Remove any extra characters around the scene."},
         # {"role": "system", "content": "You are a helpful assistant. Use ONLY the provided context to answer the question."},
         # {"role": "system", "content": "You are a helpful assistant. Use ONLY the provided context to answer the question. Give accurate answer, and include as much info as possible. But be very accurate."},
         {"role": "user", "content": f"Context:\n{context}\n\nQuestion: {query}"}
